@@ -7,20 +7,54 @@ body {
     background-color: #101010;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+  }
+
 .container {
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 25px auto 0 auto;
 
 }
+
 
 // header // 
 
 .header-menu {
-    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     max-width: 400px;
-    max-height: 50px;
-    display: flex;
+    height: 50px;
     border: 1px solid #444444;
-    border-radius: 16px;
+    border-radius: 10px;
 }
+
+.header-menu-boxs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-right: 1px solid #444444;
+}
+
+.header-menu-sticks {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu-burger {
+    width: 50px;
+    border-left: 1px solid #444444;
+}
+
+.header-logo {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 100px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
