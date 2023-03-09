@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #101010;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+// header // 
+
+.header-menu {
+    padding: 12px;
+    margin: 0 auto;
+    max-width: 400px;
+    max-height: 50px;
+    display: flex;
+    border: 1px solid #444444;
+    border-radius: 16px;
+}
