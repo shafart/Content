@@ -1,18 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+// === mixin ===
+
+@mixin Roboto {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+// === / mixin ===
+
+// === common ===
 * {
     padding: 0;
     margin: 0;
+    border: none;
     box-sizing: border-box;
 }
 
 body {
+    @include Roboto;
     background-color: #101010;
     color:#fff;
 }
 
-@font-face {
-    font-family: "Roboto";
-    src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-  }
 
 .container {
     max-width: 1280px;
@@ -20,8 +30,9 @@ body {
 
 }
 
+// === / common ===
 
-// header // 
+// === header ===
 
 .section-header {
     text-align: center;
@@ -56,7 +67,17 @@ body {
     border-left: 1px solid #444444;
 }
 
-.header-logo {
+// === header ===
+
+// === hero ===
+
+.section-hero {
+    min-height: 1600px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.hero-logo {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 160px;
@@ -65,7 +86,7 @@ body {
     text-transform: uppercase;
 }
 
-.header-description {
+.hero-description {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 24px;
@@ -75,13 +96,12 @@ body {
     margin: 40px auto;
 }
 
-.header-btns-wrapper {
+.hero-btns-wrapper {
     display: flex;
     justify-content: center;
-
 }
 
-.header-btns {
+.hero-btns {
     cursor: pointer;
     display: block;
     font-family: "Roboto";
@@ -94,13 +114,12 @@ body {
     border: none;
 }
 
-
-.header-btn-left:hover {
+.hero-btns-left:hover {
     background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
-.header-btn-right {
+.hero-btns-right {
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -109,13 +128,93 @@ body {
 }
 
 
-.header-btn-right:hover {
+.hero-btns-right:hover {
     background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
 }
 
-.header-btn-right-iconplay {
+.hero-btns-right-iconplay {
     margin-right: 5px;
 }
+
+.hero-img-bg {  
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+// === / hero ===
+
+// === headlines ===
+
+.section-headlines {
+    h2 {
+        @include Roboto;
+        font-size: 96px;
+        font-weight: 500;
+    }
+}
+
+
+.headlines-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.headlines-text {
+    flex: 1;
+    margin-left: 40px;
+}
+
+
+.headlines-product {
+    display: flex;
+    font-size: 94px;
+    font-weight: 500;
+    line-height: 140%
+}
+
+.headlines-information {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 94px;
+    font-weight: 500;
+    line-height: 140%
+}
+
+.headlines-information::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    position: absolute;
+    display: block;
+    height: 7px;
+    width: 268px;
+    background-color: #fff;
+}
+
+
+.headlines-management {
+    display: flex;
+    justify-content: end;
+    font-size: 94px;
+    font-weight: 500;
+    line-height: 140%
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
