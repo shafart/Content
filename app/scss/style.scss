@@ -30,6 +30,12 @@ body {
 
 }
 
+h3 {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 90%;
+}
+
 // === / common ===
 
 // === header ===
@@ -317,6 +323,107 @@ body {
 .do-it-better-center_item-5 { grid-area: 2 / 3 / 3 / 4; };
 .do-it-better-center_item-6 { grid-area: 3 / 2 / 4 / 3; };
 .do-it-better-center_item-7 { grid-area: 3 / 3 / 4 / 4; };
+
+// === / do-it-better ===
+
+// === section-cards ===
+
+.section-cards {
+    margin-bottom: 60px;
+}
+
+// === / section-cards ===
+
+.section-together {
+    padding: 60px 0;
+    span {
+        color:#A5A1FF;
+    }
+}
+
+
+.together-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.together-wrapper-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 30px;
+    min-width: 310px;
+    max-width: 410px;
+    min-height: 260px;
+    border-radius: 30px;
+    background-color: #A5A1FF;
+    &-header {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        color: #000;
+    }
+    &-text {
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 140%;
+        color: #000;
+    }
+}
+
+// === / section-cards ===
+
+
+// === section-advantages ===
+
+.section-advantages {
+    color:#000;
+    padding: 60px 0;
+    background-color: #fff;
+    span {
+        color: #27AE60;
+    }
+}
+
+.advantages-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.advantages-wrapper-left{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    justify-content: space-between;
+    align-items: center;
+    &-reason {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 90%;
+        color: #101010;
+    }
+
+    &-description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        color: #555555;
+    }
+}
+
+.advantages-wrapper-right {
+    background-color: #2b5876;
+    border-radius: 200px;
+    height: 200px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 
 
 
