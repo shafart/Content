@@ -415,6 +415,7 @@ h3 {
         font-size: 18px;
         line-height: 140%;
         color: #555555;
+        width: 90%
     }
 }
 .advantages-wrapper-item {
@@ -458,6 +459,8 @@ h3 {
 // === / section-advantages ===
 
 // === section-advantages ===
+
+// === section-slider ===
 
 .section-slider {
     background-color: #fff;
@@ -596,3 +599,81 @@ h3 {
     cursor: pointer;
 }
 
+// === / section-slider ===
+
+
+// ===  section-free ===
+
+.section-free {
+    background-color: #fff;
+    padding: 75px 0;
+}
+
+.wrapper-free {
+    position: relative;
+}
+
+.free-number {
+    font-size: 350px;
+    font-weight: 600;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-image: url('../images/png/bgfree.png');
+}
+
+.free-cards {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    color: #101010;
+    position: absolute;
+    top: 68%;
+    right: 0;
+}
+
+.free-newusers {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #B8B8B8;
+    position: absolute;
+    top: 83%;
+    right: 0;
+}
+
+// ===  / section-free ===
+
+// ===  section-scroll ===
+
+.section-scroll {
+    background-color: #fff;
+}
+
+.scroll-wrapper-top {
+    display: flex;
+}
+
+// === /  section-scroll ===
+
+
+// ===  section-presentation ===
+
+.section-presentation {
+    background-color: #fff;
+}
+
+.presentation-details {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    color: #101010;
+}
+
+.presentation-free {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #555555;
+
+}
