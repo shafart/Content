@@ -6,7 +6,7 @@ sliderValueProducts.innerHTML = slider.value + " " +"шт.";
 sliderValuePrice.innerHTML = slider.value * 5 + " " + "₽";
 
 slider.oninput = function() {
-  sliderValueProducts.innerHTML = this.value;
-  sliderValuePrice.innerHTML = this.value * 5;
+  sliderValueProducts.innerHTML = this.value + " " +"шт.";
+  sliderValuePrice.innerHTML = this.value * 5 + " " + "₽";
 }
 

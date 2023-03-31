@@ -18,15 +18,37 @@
 }
 
 body {
+    margin: 0 auto;
     @include Roboto;
     background-color: #101010;
     color:#fff;
+    max-width: 1920px;
 }
 
 
 .container {
-    max-width: 1280px;
-    margin:0 auto;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (max-width: 1300px) {
+            max-width: 1270px;
+      }
+      
+    @media (max-width: 1024px) {
+        max-width: 994px;
+    }
+    @media (max-width: 1024px) {
+        max-width: 994px;
+    }
+    @media (max-width: 740px) {
+        max-width: 710px;
+    }
+    @media (max-width: 360px) {
+        max-width: 330px;
+        padding: 0 10px;
+    }
+
 
 }
 
@@ -35,6 +57,15 @@ h3 {
     font-size: 64px;
     line-height: 90%;
 }
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
 
 // === / common ===
 
@@ -78,18 +109,34 @@ h3 {
 // === hero ===
 
 .section-hero {
-    min-height: 1600px;
     text-align: center;
     margin-bottom: 100px;
+    position: relative;
 }
 
-.hero-logo {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 160px;
+.hero-logo {    
+    font-weight: 500;
+    font-size: 220px;
     margin-top: 80px;
     color: #fff;
-    text-transform: uppercase;
+    text-transform: uppercase; 
+    background: linear-gradient(-60deg,  #D96969, #9ABFD5, #374D98, #AACAD6, #E8DB85, #DC826D, #D96969);
+    background-clip: text;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease-in-out infinite;
+
+    @keyframes shine {
+        to {
+        background-position: 200% center;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 200px;
+    }
+
 }
 
 .hero-description {
@@ -142,10 +189,14 @@ h3 {
 }
 
 .hero-img-bg {  
+    max-width: 100%;
+    margin-top: 100px;
+}
+
+.hero-img-timeline {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    left: 350px;
+    top: 750px; 
 }
 
 
@@ -155,6 +206,7 @@ h3 {
 
 .section-headlines {
     margin-bottom: 150px;
+
     h2 {
         @include Roboto;
         font-size: 96px;
@@ -170,78 +222,85 @@ h3 {
 
 }
 
-.headlines-text {
+.headlines-content {
     flex: 1;
     margin-left: 40px;
 }
 
-
-.headlines-product {
-    display: flex;
+.headlines-item {
     font-size: 94px;
     font-weight: 500;
-    line-height: 140%
+    line-height: 140%;
+
+    @media (max-width: 1024px) {
+            font-size: 60px;
+        }
 }
 
-.headlines-information {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    font-size: 94px;
-    font-weight: 500;
-    line-height: 140%
-}
-
-.headlines-information::before {
-    content: "";
-    top: 50%;
-    left: 0;
-    position: absolute;
-    display: block;
+.headlines-dash {
     height: 7px;
-    width: 268px;
-    border-radius: 10px;
+    width: 100%;
     background-color: #fff;
 }
 
+.dash-center {
+    flex: 1;
+}
 
-.headlines-management {
+.item-center {
+    flex: 2;
+}
+
+.headlines-wrapper {
     display: flex;
-    justify-content: end;
-    position: relative;
-    font-size: 94px;
-    font-weight: 500;
-    line-height: 140%
 }
 
-.headlines-management::before {
-    content: "";
-    top: 50%;
-    left: 0;
-    position: absolute;
-    display: block;
-    height: 7px;
-    width: 460px;
-    border-radius: 10px;
-    background-color: #fff;
+
+
+.headlines-icon {
+    text-align: center;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 140%;
+    padding: 30px 50px;
+    border-radius: 50px;
+    background: #440675;
+    animation: flow 3s infinite alternate;
+    @keyframes flow {
+        50% {
+          background: #122964;
+          box-shadow: 0 -200px 100px -100px #122964 inset;
+        }
+        75% {
+            background: #101010;
+            box-shadow: 0 -200px 100px -100px #101010 inset;
+          }
+      }
 }
+
+
 
 // === / headlines ===
 
 // === topseller ===
 
 .section-topseller {
-    margin-bottom: 170px;
+    margin: 170px 0;
     h4 {
         @include Roboto;
         font-weight: 500;
         font-size: 40px;
         line-height: 140%;
     }
+    
     h1 {
         @include Roboto;
         font-weight: 600;
         font-size: 248px;
+
+        @media (max-width: 1024px) {
+            font-size: 200px;
+        }
     }
 }
 
@@ -252,11 +311,18 @@ h3 {
     align-items: flex-end;
     @include Roboto;
     font-weight: 600;
-    font-size: 248px;
-    color: transparent;    
-    -webkit-background-clip: text;
+    font-size: 248px;   
+    background: linear-gradient(-60deg,  #D96969, #9ABFD5, #374D98, #AACAD6, #E8DB85, #DC826D, #D96969);
     background-clip: text;
-    background-image: linear-gradient(to right, blue, fuchsia);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s ease-in-out infinite;
+    @keyframes shine {
+        to {
+        background-position: 200% center;
+        }
+    }
 }
 
 // === / topseller ===
@@ -267,12 +333,21 @@ h3 {
     margin-bottom: 60px;
 }
 
-.dashboard-images {
-    margin-bottom: 40px;
+.dashboard-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 1300px) {
+        img {
+            max-width: 49%;
+        }
+    }
+
 }
 
-.notification-images {
-    margin-right: 36px;
+.dashboard-images {
+    margin-bottom: 40px;
 }
 
 // ===  / dashboard ===
@@ -359,6 +434,7 @@ h3 {
     min-height: 260px;
     border-radius: 30px;
     background-color: #A5A1FF;
+
     &-header {
         font-weight: 400;
         font-size: 20px;
@@ -382,6 +458,7 @@ h3 {
     color:#000;
     padding: 60px 0;
     background-color: #fff;
+
     span {
         color: #27AE60;
     }
@@ -402,6 +479,7 @@ h3 {
     width: 25%;
     justify-content: space-between;
     align-items: center;
+
     &-reason {
         margin-bottom: 20px;
         font-weight: 600;
@@ -458,7 +536,6 @@ h3 {
 
 // === / section-advantages ===
 
-// === section-advantages ===
 
 // === section-slider ===
 
@@ -654,6 +731,8 @@ h3 {
 .scroll-wrapper-top {
     display: flex;
 }
+  
+
 
 // === /  section-scroll ===
 
@@ -726,19 +805,25 @@ h3 {
 }
 
 .request-content-left {
-    width: 60%;
     font-weight: 600;
     font-size: 75px;
-    line-height: 90%;
+    line-height: 100%;
 }
 
 .request-content-right {
+    text-align: center;
+    padding: 10px;
+
     input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 50px;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 30px;
         line-height: 90%;
         border-bottom: 1px solid #FFFFFF;
         background-color: #101010;
+        background: #101010;
     }
 }
 
@@ -747,7 +832,48 @@ h3 {
     background: #FFFFFF;
     border-radius: 30px;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 30px;
     line-height: 140%;
+    cursor: pointer;
+}
+
+// === /  section-request ===
+
+
+// ===  section-footer-request ===
+
+.footer-menu-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 65px 0;
+}
+
+.footer-menu-link {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    li:hover {
+        text-decoration: underline;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.footer-menu-wrapper:nth-child(3) {
+    width: 30%;
 }
 
