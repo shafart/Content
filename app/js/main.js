@@ -1,38 +1,66 @@
+const scrollItems = document.querySelectorAll('.scroll-item');
+const scrollItemsOpacity = document.querySelectorAll('.scroll-opacity');
 
-
-  const hero = document.querySelector('.section-hero');
-  const header = document.querySelector('.header-menu');
-  
-  const headerFixed = () => {
-    let scrollTop = window.scrollY;
-    let heroCenter = hero.offsetHeight / 2;
-    console.log(scrollTop);
-    console.log(heroCenter);
-    
-    if (scrollTop >= heroCenter) {
-      header.classList.add('fixed');
+const scrollAnimation = () => {
+  let windowPoint = window.innerHeight / 1.2 + window.scrollY;
+  scrollItemsOpacity.forEach(el => {
+    let scrollOffset = el.offsetTop;
+    if (windowPoint >= scrollOffset) {
+      el.classList.add('animation-opacity');
     } else {
-      header.classList.remove('fixed');
+      el.classList.remove('animation-opacity');
     }
+  })
+};
 
-    headerFixed();
+const scrollAnimationDash = () => {
+  let windowPoint = window.innerHeight / 1.2 + window.scrollY;
+  scrollItems.forEach(el => {
+    let scrollOffset = el.offsetTop;
+    if (windowPoint >= scrollOffset) {
+      el.classList.add('animation-dash');
+    } else {
+      el.classList.remove('animation-dash');
+    }
+  })
+};
 
-    window.addEventListener('scroll', () => {
-      headerFixed();
-    });
+scrollAnimation();
+scrollAnimationDash();
+window.addEventListener('scroll', () => {
+  scrollAnimation();
+  scrollAnimationDash();
+  });
 
-  };
+const slider = document.getElementById("slider");
+const sliderValueProducts = document.getElementById("sliderValueProducts");
+const sliderValuePrice = document.getElementById("sliderValuePrice");
 
+sliderValueProducts.innerHTML = slider.value + " " +"шт.";
+sliderValuePrice.innerHTML = slider.value * 5 + " " + "₽";
 
-  const slider = document.getElementById("slider");
-  const sliderValueProducts = document.getElementById("sliderValueProducts");
-  const sliderValuePrice = document.getElementById("sliderValuePrice");
+slider.oninput = function() {
+  sliderValueProducts.innerHTML = this.value + " " +"шт.";
+  sliderValuePrice.innerHTML = this.value * 5 + " " + "₽";
+}
 
-  sliderValueProducts.innerHTML = slider.value + " " +"шт.";
-  sliderValuePrice.innerHTML = slider.value * 5 + " " + "₽";
+// const hero = document.querySelector('.section-hero');
+// const header = document.querySelector('.header-menu'); 
 
-  slider.oninput = function() {
-    sliderValueProducts.innerHTML = this.value + " " +"шт.";
-    sliderValuePrice.innerHTML = this.value * 5 + " " + "₽";
-  }
+// const headerFixed = () => {
+//   let scrollTop = window.scrollY;
+//   let heroCenter = hero.offsetTop;
 
+//   if (scrollTop >= heroCenter) {
+//     header.classList.add('fixed');
+//     hero.style.marginTop = `${header.offsetHeight}px`
+//   } else {
+//     header.classList.remove('fixed');
+//     hero.style.marginTop = `0px`
+//   }
+// };
+// headerFixed();
+
+// window.addEventListener('scroll', () => {
+//   headerFixed();
+// });
