@@ -50,12 +50,12 @@ img {
 
 .scroll-item {
     opacity: 0;
-    transition: all .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
 }
 
 .animation-dash {
     opacity: 1;
-    transition: all .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
     animation: tracking-in-expand 2s ease-in-out;
     @keyframes tracking-in-expand {
         0% {
@@ -72,13 +72,13 @@ img {
 .scroll-opacity {
     opacity: 0;
     transform: translateX(50px);
-    transition: all .7s ease-in-out;
+    transition: opacity .7s ease-in-out;
 }
 
 .animation-opacity {
     opacity: 1;
     transform: translateX(0);
-    transition: all .7s ease-in-out;
+    transition: opacity .7s ease-in-out;
 }
 
 
@@ -610,6 +610,7 @@ img {
 }
 
 .cards-wrapper {
+    padding: 15px;
     position: relative;
     width: 100%;
     height: 600px;
@@ -620,7 +621,7 @@ img {
     border-radius: 50px;
     background: linear-gradient(270deg, rgba(68,6,117,1) 0%, rgba(75,108,192,0.711922268907563) 100%);
     span {
-        margin-top: 20px;
+        margin-top: 40px;
         font-weight: 600;
         font-size: 42px;
         line-height: 120%;
@@ -671,6 +672,7 @@ img {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    gap: 15px;
     
     @media (max-width: 740px) {
         flex-wrap: wrap;
@@ -679,9 +681,10 @@ img {
 
 .together-wrapper-item {
     position: relative;
+    flex: 1 1 33.333%;  
     opacity: 0;
     transform: translateX(-50px);
-    transition: all .4s ease-in-out; 
+    transition: opacity .4s ease-in-out, transform .3s ease-in-out; 
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
@@ -697,30 +700,25 @@ img {
     }
 
     &:nth-child(3) {
-        transform: translateX(150px);
+        transform: translateX(50px);
     }
 
     &.animation-opacity {
         opacity: 1;
         transform: translateX(0);
-        transition: all .3s ease-in-out;    
+        transition: opacity .3s ease-in-out, transform .3s ease-in-out;    
     }
     &.animation-opacity:nth-child(2) {
         opacity: 1;
         transform: translateX(0);
-        transition: all .6s ease-in-out;    
+        transition: opacity .6s ease-in-out, transform .3s ease-in-out;    
     }
     &.animation-opacity:nth-child(3) {
         opacity: 1;
         transform: translateX(0);
-        transition: all .9s ease-in-out;    
+        transition: opacity .9s ease-in-out, transform .3s ease-in-out;    
     }
 
-    
-
-    &:not(:last-child) {
-        margin-right: 15px;
-    }
 
     &-header {
         font-weight: 400;
@@ -874,12 +872,12 @@ img {
     justify-content: center;
     transform: translateX(50px);
     opacity: 0;
-    transition: all .3s ease-in-out;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 
     &.animation-opacity {
         opacity: 1;
         transform: translateX(0);
-        transition: all .3s ease-in-out;
+        transition: opacity .3s ease-in-out, transform .3s ease-in-out;
     }
 
 
@@ -1351,7 +1349,6 @@ img {
     border-radius: 100%;
     background: radial-gradient(circle, rgba(136,192,243,1) 0%, rgba(33,123,251,1) 100%);
     color: #fff;
-    transition: .3s all;
     img {
         height: 30px;
     }
