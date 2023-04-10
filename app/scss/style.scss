@@ -11,6 +11,16 @@
 // === / mixin ===
 
 // === common ===
+
+.radius-left {
+    height: 220px;
+    width: 110px;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    border: 25px #fff solid;
+}
+.radius-right {
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -67,7 +77,7 @@ img {
 .animation-dash {
     opacity: 1;
     transition: opacity .3s ease-in-out;
-    animation: tracking-in-expand 2s ease-in-out;
+    animation: tracking-in-expand 3s ease-in-out;
     @keyframes tracking-in-expand {
         0% {
             width: 0;
@@ -490,7 +500,7 @@ img {
     }
     @media (max-width: 720px) {
         img {
-            max-width: 340px;
+            max-width: 100%;
             margin-bottom: 20px;
         }
     }
@@ -678,7 +688,6 @@ img {
 .together-wrapper-item {
     position: relative;
     flex: 1 1 33.333%;  
-    transform: translateX(-50px);
     transition: opacity .4s ease-in-out, transform .3s ease-in-out; 
     z-index: 1;
     display: flex;
@@ -1250,14 +1259,59 @@ img {
 // ===  section-scroll ===
 
 .section-scroll {
-    background-color: #fff;
-    padding: 60px 0;
+    background: #fff;
+    overflow: hidden;
 }
+
 
 .scroll-wrapper-top {
     display: flex;
+    animation: scroll 40s linear infinite;
+    @keyframes scroll {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    @media (max-width: 960px) {
+        height: 100px;
+    }
+    @media (max-width: 360px) {
+        height: 65px;
+    }
 }
-  
+
+    
+.scroll-wrapper-top img {
+    margin-right: 20px;
+}
+
+.scroll-wrapper-bottom {
+    display: flex;
+    animation: scroll2 40s linear infinite;
+    @keyframes scroll2 {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+    @media (max-width: 960px) {
+        height: 100px;
+    }
+    @media (max-width: 360px) {
+        height: 65px;
+    }
+}
+    
+.scroll-wrapper-bottom img {
+    margin-right: 20px;
+}
+
+
 // === /  section-scroll ===
 
 
@@ -1413,6 +1467,7 @@ img {
 .footer-menu-wrapper {
     display: flex;
     align-items: flex-start;
+    gap: 25px;
     justify-content: space-between;
     padding: 65px 0;
     img {
@@ -1443,10 +1498,6 @@ img {
     li:not(:last-child) {
         margin-bottom: 30px;
     }
-    &:not(:last-child) {
-        margin-right: 20px;
-    }
-
     @media (max-width: 1024px) {
         font-size: 16px;
     }
