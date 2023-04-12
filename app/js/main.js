@@ -43,7 +43,6 @@ const headerMenu = document.querySelector('.header-menu');
 const body = document.body;
 
 burgerIcon.addEventListener('click', () => {
-  body.classList.toggle('stop-scroll')
   burgerMenu.classList.toggle('active');
   headerMenu.classList.toggle('active');
 });
