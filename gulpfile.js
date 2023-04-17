@@ -7,6 +7,7 @@ const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
+const replace = require("gulp-replace");
 
 function scripts() {
     return src('app/js/main.js')
@@ -62,11 +63,21 @@ function building() {
         .pipe(dest('dist'))
 }
 
+
+function replacePaths() {
+    return src('app/index.html')
+        .pipe(replace(/(src|href)=("|')\.\//g, '$1=$2'))
+        .pipe(dest('dist'));
+}
+
+
+
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
 exports.watching = watching;
 exports.browsersync = browsersync;
+exports.replacePaths = replacePaths;
 
-exports.build = series(cleanDist, building);
+exports.build = series(cleanDist, building, replacePaths);
 exports.default = parallel(styles, scripts, images, browsersync, watching);
