@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import 'adaptive';
 
 // === mixin ===
 
@@ -11,6 +10,20 @@
 // === / mixin ===
 
 // === common ===
+
+body::-webkit-scrollbar {
+    width: 20px;
+    border-radius: 10px;
+}
+  
+body::-webkit-scrollbar-track {
+background: #333333;
+}
+
+body::-webkit-scrollbar-thumb {
+background: #555555;
+}
+
 
 * {
     padding: 0;
@@ -384,16 +397,14 @@ img {
     max-width: 100%;
     margin-top: 100px;
 
-    @media (max-width: 360px) {
+    @media (max-width: 560px) {
         filter:blur(10px)
     }
 
 }
 
 .hero-img-timeline {
-    position: absolute;
-    left: 350px;
-    top: 750px; 
+
 }
 
 
@@ -1214,6 +1225,7 @@ img {
     display: flex;
     width: 33%;
     flex-direction: row;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: space-around;
     background: #1C1C1C;
@@ -1565,6 +1577,9 @@ img {
     font-size: 30px;
     line-height: 140%;
     cursor: pointer;
+    &:hover {
+        background:  #4CC67F;
+    }
 }
 
 // === /  section-request ===

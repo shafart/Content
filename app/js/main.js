@@ -40,9 +40,15 @@ animateBlocks();
 const burgerIcon = document.querySelector('.burger-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 const headerMenu = document.querySelector('.header-menu');
-const body = document.body;
 
 burgerIcon.addEventListener('click', () => {
   burgerMenu.classList.toggle('active');
   headerMenu.classList.toggle('active');
 });
+
+document.addEventListener('mouseup', (e) => {
+  if (!burgerMenu.contains(e.target)) {
+    burgerMenu.classList.remove('active');
+    headerMenu.classList.remove('active');
+  }
+})
